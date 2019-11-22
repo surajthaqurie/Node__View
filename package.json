@@ -1,0 +1,15 @@
+{
+  "name": "view_node",
+  "version": "10.17.0",
+  "description": "Implementing View on node backend with Ejs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dev_Lop",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.7.4",
+    "express": "^4.17.1"
+  }
+}
