@@ -1,3 +1,9 @@
-const htpp = requrie('htpp');
-const app = ('./app');
-const server = htpp.createServer(app);
+const http = require('http');
+const app = require('./app');
+const server = http.createServer(app);
+
+const port = 3000;
+
+server.listen(port, () => {
+    console.log(`Listing port ${port}`);
+})
