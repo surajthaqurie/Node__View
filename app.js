@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
     res.render('home', { data: data });
 });
 
-app.post('/student/add',  (req, res)=> {
+app.post('/addUser',  (req, res)=> {
     var student = {
         first: req.body.fname,
         last: req.body.lname
@@ -25,7 +25,7 @@ app.post('/student/add',  (req, res)=> {
     console.log(student);
     res.render('signup', {
         userValue: student,
-        topicHead: 'Student Form'
+        topicHead: 'User Form'
     });
 });
 
