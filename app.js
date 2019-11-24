@@ -17,7 +17,8 @@ app.get('/', (req, res) => {
     res.render('home', { data: data });
 });
 
-app.post('/addUser',  (req, res)=> {
+
+app.post('/addUser', (req, res) => {
     var student = {
         first: req.body.fname,
         last: req.body.lname
@@ -28,5 +29,14 @@ app.post('/addUser',  (req, res)=> {
         topicHead: 'User Form'
     });
 });
-
+app.get('/addUser', (req, res) => {
+    var student = {
+        first: req.body.fname,
+        last: req.body.lname
+    }
+    res.render('signup', {
+        userValue: student,
+        topicHead: 'User Form'
+    });
+});
 module.exports = app;
