@@ -66,4 +66,13 @@ app.get('/posts', function (req, res, next) {
     ]
     res.render('blog/post', { posts: blogPosts });
 });
+
+app.get('/home', function(req, res) {
+	res.render('pages/index');
+});
+
+// about page 
+app.get('/about', function(req, res) {
+	res.render('pages/about');
+});
 module.exports = app;
