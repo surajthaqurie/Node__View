@@ -5,6 +5,9 @@ const parser = require('body-parser');
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
+app.use(express.static('public'));
+// app.use(express.static('files'));
+
 app.use(parser.urlencoded({ extended: false }));
 app.use(parser.json());
 
@@ -83,10 +86,28 @@ app.get('/ajax', (req, res) => {
     });
 });
 app.post('/ajax', (req, res) => {
-    res.render('ajax', {
+    res.render('ajax/ajax', {
         title: 'An Ajax Example', quote: req.body.quote
     });
 });
 
+const order = [
+    {
+        id: 1,
+        name: "James",
+        drink: "Coffee"
+    },
+    {
+        id: 2,
+        name: "John",
+        drink: "Latte"
+    }
+];
+
+app.get('/ajax2', (req, res) => {
+    res.render('ajax/ajax2', {
+        order: order
+    });
+});
 
 module.exports = app;
