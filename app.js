@@ -67,12 +67,26 @@ app.get('/posts', function (req, res, next) {
     res.render('blog/post', { posts: blogPosts });
 });
 
-app.get('/home', function(req, res) {
-	res.render('pages/index');
+app.get('/home', function (req, res) {
+    res.render('pages/index');
 });
 
 // about page 
-app.get('/about', function(req, res) {
-	res.render('pages/about');
+app.get('/about', function (req, res) {
+    res.render('pages/about');
 });
+// AJAX
+app.get('/ajax', (req, res) => {
+    res.render('ajax', {
+        title: 'An Ajax Example',
+        quote: "AJAX is great!"
+    });
+});
+app.post('/ajax', (req, res) => {
+    res.render('ajax', {
+        title: 'An Ajax Example', quote: req.body.quote
+    });
+});
+
+
 module.exports = app;
