@@ -1,4 +1,4 @@
 node-ejs
 ========
 
-Using EJS to template a Node application.
+Using EJS template with ajax a Node application.
